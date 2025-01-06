@@ -1,0 +1,19 @@
+{
+  "welcomeFile": "HTML5Module/index.html",
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/HTML5Module/(.*)$",
+      "target": "$1",
+      "authenticationType": "xsuaa",
+      "localDir": "HTML5Module/webapp"
+    },
+    {
+      "source": "^/sap/(.*)$",
+      "target": "/sap/$1",
+      "authenticationType": "xsuaa",
+      "csrfProtection": false,
+      "destination": "backend-destination"
+    }
+  ]
+}

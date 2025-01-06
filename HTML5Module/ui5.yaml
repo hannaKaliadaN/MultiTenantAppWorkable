@@ -1,0 +1,30 @@
+specVersion: "3.0"
+metadata:
+  name: mtx-guestbook1
+type: application
+resources:
+  configuration:
+    paths:
+      webapp: HTML5Module/webapp
+framework:
+  name: SAPUI5
+  version: 1.108.0
+  libraries:
+    - name: sap.ui.core
+    - name: sap.m
+    - name: sap.ui.layout
+    - name: themelib_sap_horizon
+server:
+  customMiddleware:
+    - name: ui5-middleware-livereload
+      afterMiddleware: compression
+    - name: backend-destination
+      afterMiddleware: compression
+      configuration:
+        backend:
+          path: '/sap/opu/odata/iwfnd/CATALOGSERVICE;v=0002/'
+          destination: backend-destination
+        debug: true
+        port: 1091
+        xsappJson: router/xs-app.json
+        destinations: []

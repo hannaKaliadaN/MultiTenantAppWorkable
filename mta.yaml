@@ -1,0 +1,69 @@
+ID: mtx-guestbook1
+_schema-version: "2.1"
+version: 1.0.0
+
+parameters:
+  appname: mtx-guestbook1
+  subdomain: 72467e6ctrial
+
+modules:
+  - name: mtx-approuter
+    type: approuter.nodejs
+    path: router
+    parameters:
+      routes:
+        - route: https://${subdomain}-${appname}.${default-domain}
+        - route: https://consumer-279djyng-${appname}.${default-domain}
+        - route: https://consumer-2-usnq0b9u-${appname}.${default-domain}
+        - route: https://consumer-1-8vtckc80-${appname}.${default-domain}
+      disk-quota: 256M
+      memory: 256M
+    requires:
+      - name: uaa
+      - name: saas-registry
+      - name: backend-destination
+      - name: connectivity
+    properties:
+      TENANT_HOST_PATTERN: "^(.*)-${appname}.${default-domain}"
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install
+        - npm run build:ui --prefix ..
+resources:
+  - name: connectivity
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: connectivity
+      service-name: connectivity-service
+      service-plan: lite
+  - name: backend-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service-plan: lite
+      service: destination
+      config:
+        HTML5Runtime_enabled: false
+        version: 1.0.0
+  - name: uaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service-plan: application
+      path: ./xs-security.json
+      service: xsuaa
+      service-name: ${appname}-uaa
+  - name: saas-registry
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: saas-registry
+      service-plan: application
+      service-name: ${appname}-saas-registry
+      config:
+        xsappname: ${appname}
+        appName: ${appname}
+        displayName: Guestbook
+        description: A guestbook app to explain the concepts of Multitenancy
+        category: Custom Apps
+        appUrls:
+          onSubscription: https://${subdomain}-${appname}.${default-domain}/callback/v1.0/tenants/{tenantId}
+          getDependencies: https://${subdomain}-${appname}.${default-domain}/callback/v1.0/dependencies

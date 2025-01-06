@@ -1,0 +1,2 @@
+sap.ui.define(["./BaseController","sap/m/MessageBox","sap/m/MessageToast"],function(e){"use strict";return e.extend("HTML5Module.controller.MainView",{callApi:function(){fetch("/sap/opu/odata/iwfnd/CATALOGSERVICE;v=0002/").then(async e=>{if(e.ok){const a=await e.json()}})}})});
+//# sourceMappingURL=MainView.controller.js.map

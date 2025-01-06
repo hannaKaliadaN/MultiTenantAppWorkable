@@ -1,0 +1,161 @@
+{
+	"destinations": [
+		{
+			"name": "backend-destination",
+			"url": "http://vmg-004.leverx.com:8001",
+			"proxyType": "OnPremise"
+		}
+	],
+	
+	"VCAP_SERVICES": {
+		"destination": [
+			{
+				"label": "destination",
+				"provider": null,
+				"plan": "lite",
+				"name": "backend-destination",
+				"tags": [
+					"destination",
+					"conn",
+					"connsvc"
+				],
+				"instance_guid": "a8444166-902a-4729-ad92-65e06a7755d4",
+				"instance_name": "backend-destination",
+				"binding_guid": "d8b4d2b3-1464-4c63-ba94-4f40ed52ee48",
+				"binding_name": null,
+				"credentials": {
+					"tenantmode": "dedicated",
+					"clientid": "sb-clonea8444166902a4729ad9265e06a7755d4!b375467|destination-xsappname!b62",
+					"credential-type": "binding-secret",
+					"xsappname": "clonea8444166902a4729ad9265e06a7755d4!b375467|destination-xsappname!b62",
+					"clientsecret": "d8b4d2b3-1464-4c63-ba94-4f40ed52ee48$cofiK9N2-XtiALcmm8e7RuFZ7-mPyFpCJUc0rsVBI6s=",
+					"uri": "https://destination-configuration.cfapps.us10.hana.ondemand.com",
+					"url": "https://72467e6ctrial.authentication.us10.hana.ondemand.com",
+					"uaadomain": "authentication.us10.hana.ondemand.com",
+					"instanceid": "a8444166-902a-4729-ad92-65e06a7755d4",
+					"verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoXf4lOvP+76jEGWq2N1G\nnpEQWVkTtRe85Z80JCZDiSnkFAdMs/OQXFlBXS20C1mD1G9CGmwJDPAxMZI7/Wto\n3KVSN1e1PadMCIuGWHSNNuNKDV9ZG6+DOJcQEMX/cMg+J3nGY86ZXdSekcKGndpK\nPJG/GV3uInh5HQjYWgUm9Tf/ZO8WSFIyNBdw7FUu/e5PcxuVeboywilUybdkGBpy\nt8TrPfS0KfcO6yQxhcnXTkAncNEusyJFN2QrmAHjrSYuC/YOqorH2jHNzm95RK4p\nqW++73ftw5SJe5Q80Vips4r22JjyF+4WG8aBjU+BEuRcLiN9tfVOSNF99w5WO0pV\nFQIDAQAB\n-----END PUBLIC KEY-----",
+					"identityzone": "72467e6ctrial",
+					"tenantid": "e354c08a-7b47-4c11-bcf4-3a079e6e554e"
+				},
+				"syslog_drain_url": null,
+				"volume_mounts": []
+			}
+		],
+		"saas-registry": [
+			{
+				"label": "saas-registry",
+				"provider": null,
+				"plan": "application",
+				"name": "mtx-guestbook1-saas-registry",
+				"tags": [
+					"SaaS"
+				],
+				"instance_guid": "54626412-5b5d-4b8c-8397-b6ae35014c89",
+				"instance_name": "mtx-guestbook1-saas-registry",
+				"binding_guid": "939713b2-40a7-4814-9886-b087128ed672",
+				"binding_name": null,
+				"credentials": {
+					"tenantmode": "dedicated",
+					"sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+					"subaccountid": "e354c08a-7b47-4c11-bcf4-3a079e6e554e",
+					"credential-type": "binding-secret",
+					"clientid": "sb-mtx-guestbook1-clone!b375467|lps-registry-broker!b4",
+					"xsappname": "mtx-guestbook1",
+					"appName": "mtx-guestbook1",
+					"clientsecret": "939713b2-40a7-4814-9886-b087128ed672$_uhbwOPmr5IWTC-oDKj7UC6J5xGvOv61Q3Xth-lzdXM=",
+					"tenant_onboarding_url": "https://saas-manager.mesh.cf.us10.hana.ondemand.com",
+					"saas_registry_url": "https://saas-manager.mesh.cf.us10.hana.ondemand.com",
+					"appUrls": "{\"getDependencies\":\"https://72467e6ctrial-mtx-guestbook1.cfapps.us10-001.hana.ondemand.com/callback/v1.0/dependencies\",\"onSubscription\":\"https://72467e6ctrial-mtx-guestbook1.cfapps.us10-001.hana.ondemand.com/callback/v1.0/tenants/{tenantId}\",\"getSubscriptionParameters\":\"\",\"onSubscriptionAsync\":false,\"onUnSubscriptionAsync\":false,\"onUpdateSubscriptionParametersAsync\":false,\"callbackTimeoutMillis\":0,\"runGetDependenciesOnAsyncCallback\":false,\"onUpdateDependenciesAsync\":false}",
+					"serviceInstanceId": "54626412-5b5d-4b8c-8397-b6ae35014c89",
+					"description": "A guestbook app to explain the concepts of Multitenancy",
+					"display_name": "Guestbook",
+					"url": "https://72467e6ctrial.authentication.us10.hana.ondemand.com",
+					"uaadomain": "authentication.us10.hana.ondemand.com",
+					"verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoXf4lOvP+76jEGWq2N1G\nnpEQWVkTtRe85Z80JCZDiSnkFAdMs/OQXFlBXS20C1mD1G9CGmwJDPAxMZI7/Wto\n3KVSN1e1PadMCIuGWHSNNuNKDV9ZG6+DOJcQEMX/cMg+J3nGY86ZXdSekcKGndpK\nPJG/GV3uInh5HQjYWgUm9Tf/ZO8WSFIyNBdw7FUu/e5PcxuVeboywilUybdkGBpy\nt8TrPfS0KfcO6yQxhcnXTkAncNEusyJFN2QrmAHjrSYuC/YOqorH2jHNzm95RK4p\nqW++73ftw5SJe5Q80Vips4r22JjyF+4WG8aBjU+BEuRcLiN9tfVOSNF99w5WO0pV\nFQIDAQAB\n-----END PUBLIC KEY-----",
+					"apiurl": "https://api.authentication.us10.hana.ondemand.com",
+					"identityzone": "72467e6ctrial",
+					"identityzoneid": "e354c08a-7b47-4c11-bcf4-3a079e6e554e",
+					"tenantid": "e354c08a-7b47-4c11-bcf4-3a079e6e554e",
+					"zoneid": "e354c08a-7b47-4c11-bcf4-3a079e6e554e",
+					"category": "Custom Apps"
+				},
+				"syslog_drain_url": null,
+				"volume_mounts": []
+			}
+		],
+		"xsuaa": [
+			{
+				"label": "xsuaa",
+				"provider": null,
+				"plan": "application",
+				"name": "mtx-guestbook1-uaa",
+				"tags": [
+					"xsuaa"
+				],
+				"instance_guid": "4af0ae51-95de-4bc6-b0a0-f85fc1e235b8",
+				"instance_name": "mtx-guestbook1-uaa",
+				"binding_guid": "c3b14245-1a1f-4423-804b-d4de48cd72cd",
+				"binding_name": null,
+				"credentials": {
+					"tenantmode": "shared",
+					"sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+					"subaccountid": "e354c08a-7b47-4c11-bcf4-3a079e6e554e",
+					"credential-type": "instance-secret",
+					"clientid": "sb-mtx-guestbook1!t375467",
+					"xsappname": "mtx-guestbook1!t375467",
+					"clientsecret": "8NjC5EJRv8dw6YejB54HAfrGEQ8=",
+					"serviceInstanceId": "4af0ae51-95de-4bc6-b0a0-f85fc1e235b8",
+					"url": "https://72467e6ctrial.authentication.us10.hana.ondemand.com",
+					"uaadomain": "authentication.us10.hana.ondemand.com",
+					"verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoXf4lOvP+76jEGWq2N1G\nnpEQWVkTtRe85Z80JCZDiSnkFAdMs/OQXFlBXS20C1mD1G9CGmwJDPAxMZI7/Wto\n3KVSN1e1PadMCIuGWHSNNuNKDV9ZG6+DOJcQEMX/cMg+J3nGY86ZXdSekcKGndpK\nPJG/GV3uInh5HQjYWgUm9Tf/ZO8WSFIyNBdw7FUu/e5PcxuVeboywilUybdkGBpy\nt8TrPfS0KfcO6yQxhcnXTkAncNEusyJFN2QrmAHjrSYuC/YOqorH2jHNzm95RK4p\nqW++73ftw5SJe5Q80Vips4r22JjyF+4WG8aBjU+BEuRcLiN9tfVOSNF99w5WO0pV\nFQIDAQAB\n-----END PUBLIC KEY-----",
+					"apiurl": "https://api.authentication.us10.hana.ondemand.com",
+					"identityzone": "72467e6ctrial",
+					"identityzoneid": "e354c08a-7b47-4c11-bcf4-3a079e6e554e",
+					"tenantid": "e354c08a-7b47-4c11-bcf4-3a079e6e554e",
+					"zoneid": "e354c08a-7b47-4c11-bcf4-3a079e6e554e"
+				},
+				"syslog_drain_url": null,
+				"volume_mounts": []
+			}
+		],
+		"connectivity": [
+			{
+				"label": "connectivity",
+				"provider": null,
+				"plan": "lite",
+				"name": "connectivity-service",
+				"tags": [
+					"connectivity",
+					"conn",
+					"connsvc"
+				],
+				"instance_guid": "31ef9c18-38b4-40a8-a912-44e15aba4ce3",
+				"instance_name": "connectivity-service",
+				"binding_guid": "969004c0-288a-4a6f-adca-1e9901378b08",
+				"binding_name": null,
+				"credentials": {
+					"tenantmode": "dedicated",
+					"clientid": "sb-clone31ef9c1838b440a8a91244e15aba4ce3!b375467|connectivity!b23892",
+					"token_service_domain": "authentication.us10.hana.ondemand.com",
+					"credential-type": "binding-secret",
+					"token_service_url": "https://72467e6ctrial.authentication.us10.hana.ondemand.com",
+					"xsappname": "clone31ef9c1838b440a8a91244e15aba4ce3!b375467|connectivity!b23892",
+					"onpremise_proxy_ldap_port": "20001",
+					"onpremise_socks5_proxy_port": "20004",
+					"clientsecret": "969004c0-288a-4a6f-adca-1e9901378b08$o5MH3MSZa0sxWvM56qh2tWTL9Rp-72lZeAYZbRB-DqE=",
+					"onpremise_proxy_http_port": "20003",
+					"url": "https://72467e6ctrial.authentication.us10.hana.ondemand.com",
+					"onpremise_proxy_host": "connectivityproxy.internal.cf.us10-001.hana.ondemand.com",
+					"uaadomain": "authentication.us10.hana.ondemand.com",
+					"onpremise_proxy_port": "20003",
+					"verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoXf4lOvP+76jEGWq2N1G\nnpEQWVkTtRe85Z80JCZDiSnkFAdMs/OQXFlBXS20C1mD1G9CGmwJDPAxMZI7/Wto\n3KVSN1e1PadMCIuGWHSNNuNKDV9ZG6+DOJcQEMX/cMg+J3nGY86ZXdSekcKGndpK\nPJG/GV3uInh5HQjYWgUm9Tf/ZO8WSFIyNBdw7FUu/e5PcxuVeboywilUybdkGBpy\nt8TrPfS0KfcO6yQxhcnXTkAncNEusyJFN2QrmAHjrSYuC/YOqorH2jHNzm95RK4p\nqW++73ftw5SJe5Q80Vips4r22JjyF+4WG8aBjU+BEuRcLiN9tfVOSNF99w5WO0pV\nFQIDAQAB\n-----END PUBLIC KEY-----",
+					"identityzone": "72467e6ctrial",
+					"tenantid": "e354c08a-7b47-4c11-bcf4-3a079e6e554e",
+					"onpremise_proxy_rfc_port": "20001"
+				},
+				"syslog_drain_url": null,
+				"volume_mounts": []
+			}
+		]
+	}
+}
